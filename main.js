@@ -3,9 +3,9 @@ const cors = require('cors')
 
 const app = express();
 
-const PORT = 8080;
+const PORT = 8000;
 
-app.listen(PORT, () => console.log('Server running on ${PORT}'));
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
 const corsOptions = {
     origin: "*",
@@ -14,7 +14,7 @@ const corsOptions = {
     optionSuccessStatus: 200,
 };
 
-app.request(cors(corsOptions))
+app.use(cors(corsOptions))
 app.get("/", (req, res) => {
     res.send({
         success: true,
